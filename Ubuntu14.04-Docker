@@ -56,6 +56,14 @@ docker exec [-d] [-i] [-t] 容器名 命令及参数
 docker stop 容器名 
 docker kill 容器名  //直接停止容器
 
+运行容器时设置容器的端口映射
+[-P] 对容器暴露的所有端口进行映射 docker run -P -i -t ubuntu /bin/bash 
+[-p] 指定映射的端口 
+docker run -p 80 -i -t ubuntu /bin/bash  只指定容器端口，宿主机端口随机映射
+docker run -p 8080:80 -i -t ubuntu /bin/bash  同时指定宿主机端口和容器端口
+docker run -p 0.0.0.0:80 -i -t ubuntu /bin/bash 指定IP和容器的端口
+docker run -p 0.0.0.0:8080:80 -i -t ubuntu /bin/bash 指定IP，宿主机端口和容器端口
+
 
 
 

@@ -65,5 +65,37 @@ docker run -p 0.0.0.0:80 -i -t ubuntu /bin/bash 指定IP和容器的端口
 docker run -p 0.0.0.0:8080:80 -i -t ubuntu /bin/bash 指定IP，宿主机端口和容器端口
 
 
+docker run -p 80 --name lamp2 -i -t ubuntu /bin/bash
+换源
+apt-get install apache2
+
+docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro daocloud.io/daocloud/nginx-proxy
+
+docker run -e VIRTUAL_HOST=a.aiershang.com -p 80 --name lamp2 -i -t ubuntu /bin/bash
+
+LAMP一键安装包
+http://www.wdlinux.cn/lanmp/faq.html
+
+容器目录：/var/lib/docker/aufs/mnt
+
+在Ubuntu上安装Apache，每次重启，都会出现以下错误提示：
+Could not reliably determine the server’s fully qualified domain name, using 127.0.1.1 for ServerName
+解决办法
+修改 httpd.conf 文件
+打开终端，输入以下命令：
+sudo vim /etc/apache2/httpd.conf
+默认情况下，这个是一个空文件，在文件中加入以下内容：
+ServerName localhost
+保存文件退出，再次重启apache，错误提示没有了。
+
+启动apache服务
+/etc/init.d/apache2 start
+
+重启apache服务
+/etc/init.d/apache2 restart
+
+停止apache服务
+/etc/init.d/apache2 stop
+
 
 

@@ -1,0 +1,61 @@
+###Ubuntu 14.04 64位
+###在https://www.daocloud.io注册账号。//登陆后控制台点加速器
+####安装Docker
+ssh root@101.200.162.144  //远程登陆服务器
+sudo apt-get install -y curl  //安装Curl
+sudo curl -sSL https://get.daocloud.io/docker | sh  //使用国内DaoCloud镜像下载安装Docker最新版本
+sudo service docker status  //返回 docker start/running 就表示安装成功
+sudo docker version //截止2016年3月2日安装的最新版本为1.10.2
+
+curl -sSL https://get.daocloud.io/daomonit/install.sh | sh -s e5efb4a4ed2c919e56782e329d4b74106031de38 
+//www.daocloud.io返回内容：该主机上同时激活了 Docker 加速器，您可以通过运行主机上的 Dao 命令启动加速器。$> dao pull mysql
+
+####为当前用户添加Docker用户组，可以不使用root账户使用Docker，不需要docker命令前加sudo
+sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+sudo service docker restart
+
+dao pull ubuntu  //下载Ubuntu镜像
+docker images //查看已有镜像
+docker run ubuntu echo 'hello,world'  //生成一个执行单次命令测试容器
+
+启动交互式容器[在命令结束后就停止]
+docker run -i -t IMAGE /bin/bash
+
+exit 关闭/停止容器
+
+查看容器
+docker ps 返回正在运行的容器 [-a] 列出所有容器  [-l] 列出最新的容器
+docker inspect 容器ID/容器名  //查看容器详细信息
+
+自定义容器名
+docker run --name=容器名 -i -t ubuntu /bin/bash
+
+重新启动停止的容器
+docker start [-i] 容器名 //-i表示以交互式启动容器
+
+删除容器
+docker rm 容器名  //必须是已经停止的容器
+
+####守护式容器-[长期运行的容器]
+运行交互式容器后，不用exit退出，而是用Ctrl+P，Ctrl+Q的组合键退出
+
+重新进入在后台运行的容器/附加到运行中的容器
+docker attach 容器名
+
+使用run命令启动一个守护式容器
+docker run --name=demo3 -d ubuntu 命令
+
+docker logs 查看容器日志
+查看运行中容器内进程
+docker top 容器名
+在运行中容器内启动新进程
+docker exec [-d] [-i] [-t] 容器名 命令及参数
+
+停止守护式容器
+docker stop 容器名 
+docker kill 容器名  //直接停止容器
+
+
+
+

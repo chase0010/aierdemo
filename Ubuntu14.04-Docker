@@ -1,5 +1,12 @@
 ###Ubuntu 14.04 64位
 ###在https://www.daocloud.io注册账号。//登陆后控制台点加速器
+
+mysql容器
+phpmyadmin容器
+php+apache容器
+
+
+
 ####安装Docker
 ssh root@101.200.162.144  //远程登陆服务器
 sudo apt-get install -y curl  //安装Curl
@@ -73,6 +80,8 @@ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro daocloud.io/d
 
 docker run -e VIRTUAL_HOST=a.aiershang.com -p 80 --name lamp2 -i -t ubuntu /bin/bash
 
+
+
 LAMP一键安装包
 http://www.wdlinux.cn/lanmp/faq.html
 
@@ -98,4 +107,12 @@ ServerName localhost
 /etc/init.d/apache2 stop
 
 
+docker run -e VIRTUAL_HOST=pmd.aiershang.com --name my-mysql-admin -d --link my-mysql:db -p 80 phpmyadmin/phpmyadmin
+安装phpmyadmin
 
+docker run -e VIRTUAL_HOST=pmd.aiershang.com --name my-mysql-admin -d --link my-mysql:db -p 80 phpmyadmin/phpmyadmin
+
+docker run --name phpmysql --link my-mysql:mysql -d dao_php5-3-apache_1
+
+
+docker run -e VIRTUAL_HOST=p.aiershang.com -it -p 80 --name my-apache-php-app --link my-mysql:mysql -v "$PWD":/var/www/html daocloud.io/php:5.3-apache

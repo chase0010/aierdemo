@@ -16,3 +16,39 @@ Discover Meteor 中文版：http://wiki.jikexueyuan.com/project/discover-meteor/
 ####社区
 meteorhub：http://www.meteorhub.org/
 CMeteor：http://www.cmeteor.org/
+
+
+Meteor 简介
+Meteor是跨时代的全栈Web框架，Github stars数已超过Rails，它能迅速的开发实时（Real-Time）和响应式（Reactive）的应用，并且可以在一套代码中支持web，iOS，Android，Desktop多端。Meteor能够轻松的和其他框架和应用结合，如React，AngularJS，MySQl，PgSQL等。
+点击这个链接注册可以免费享用极客学院VIP30天学习Meteor开发指南系列课程！
+Meteor 是什么？
+Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。
+因为 Meteor 是基于 Node.js 开发的，所以在客户端和服务器端都使用 JavaScript 作为开发语言。而且，Meteor 程序的代码还能在前后两端共用。
+Meteor 这个平台很强大，网页程序开发过程中的很多复杂、容易出错的功能都能抽象出来，实现起来很简单。
+Meteor 开发指南系列课程目录
+第一课 － Meteor 简介 － http://www.jikexueyuan.com/course/1631.html
+第二课 － Meteor 开发环境部署 － http://www.jikexueyuan.com/course/1726.html
+第三课 － 创建 Meteor 项目 － http://www.jikexueyuan.com/course/1884.html
+第四课 - Meteor 模板系统 - http://www.jikexueyuan.com/course/1972.html
+第五课 - Meteor 集合 - http://www.jikexueyuan.com/course/2044.html
+第六课 - Meteor 发布与订阅 - http://www.jikexueyuan.com/course/2065.html
+第七课 - Meteor 路由 - http://www.jikexueyuan.com/course/2072.html
+第八课 - Meteor 添加用户 - http://www.jikexueyuan.com/course/2155.html
+第九课 - Meteor 会话与响应式 - http://www.jikexueyuan.com/course/2228.html
+第十课 - Meteor 创建和编辑帖子 - http://www.jikexueyuan.com/course/2281.html
+第十一课 - Meteor 十分钟开发 CMS 系统 － 正在录制
+后续计划
+后期还会加入 Meteor Ionic，Meteor React，ECMAScript 2015 等移动开发和 Meteor 最新进展相关内容，以上课程是对 DiscoverMeteor 做的一点扩充！希望对初学者有所帮助！
+中文资料
+Meteor 中文文档 http://docs.meteorhub.org/#/basic/
+Angular-Meteor 中文教程 http://angular.meteorhub.org/
+Discover Meteor 中文版 http://zh.discovermeteor.com/
+Discover Meteor 中文版（极客学院镜像） http://wiki.jikexueyuan.com/project/discover-meteor/
+Iron-router 中文文档 https://github.com/zicai/zicai.github.com/blob/master/_posts/2015-03-13-iron-router-guide.md
+使用 Meteor 和 React 开发 Web App http://cmeteor.org/t/meteor-react-web-app/119
+英文资料
+Meteor Guide http://meteor-guide.readthedocs.org/
+Meteor 论坛 https://forums.meteor.com/
+Your First Meteor Application http://meteortips.com/book.pdf
+Meteor Cookbook https://github.com/awatson1978/meteor-cookbook/blob/master/table-of-contents.md
+Meteor Routing Guide https://kadira.io/academy/meteor-routing-guide

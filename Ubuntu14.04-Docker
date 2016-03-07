@@ -118,3 +118,7 @@ docker run --name phpmysql --link my-mysql:mysql -d dao_php5-3-apache_1
 docker run -e VIRTUAL_HOST=p.aiershang.com -it -p 80 --name my-apache-php-app --link my-mysql:mysql -v "$PWD":/var/www/html daocloud.io/php:5.3-apache
 
 docker run -e VIRTUAL_HOST=v2.aiershang.com --name aier-apache-php-v2 --link my-mysql:mysql -v "$PWD/":/var/www/html daocloud.io/php:5.3-apache
+
+docker run -d -p 80:80 -v /home/nginx-proxy:/etc daocloud.io/daocloud/nginx-proxy
+
+docker run -e VIRTUAL_HOST=wx.byrj365.com --name buyi-wexin-app -v "$PWD/":/var/www/html daocloud.io/php:5.3-apache
